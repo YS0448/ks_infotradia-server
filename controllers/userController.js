@@ -25,8 +25,8 @@ const createUser = async (req, res) => {
 
 const getUserIP = (req,res) =>{
     const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
-    console.log('User IP:', ip);
-    res.send(`Your IP address is ${ip}`);
+    // console.log('User IP:', ip);
+    // res.send(`Your IP address is ${ip}`);
 } 
 
 
