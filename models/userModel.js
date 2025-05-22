@@ -1,17 +1,14 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
-  name: {
+const visitorSchema = new mongoose.Schema({
+  ip: {
     type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-}, { timestamps: true });
+    required: false,
+  }
+}, { timestamps: true, 
+    collection: 'visitor_details' 
+}); // adds createdAt & updatedAt
 
-const User = mongoose.model('User', userSchema);
+const Visitor = mongoose.model('Visitor', visitorSchema);
 
-module.exports = User;
+module.exports = Visitor;
